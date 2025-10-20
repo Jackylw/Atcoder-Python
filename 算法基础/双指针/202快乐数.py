@@ -12,3 +12,4 @@ class Solution:
             slow = self.f(slow)
             fast = self.f(self.f(fast))
         return slow == 1
+
