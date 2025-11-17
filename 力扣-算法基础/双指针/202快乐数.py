@@ -13,3 +13,12 @@ class Solution:
             fast = self.f(self.f(fast))
         return slow == 1
 
+    def isHappy2(self, n: int) -> bool:
+        s = set()
+        while n not in s:
+            s.add(n)
+            n = self.f(n)
+            if n == 1:
+                return True
+        return False
+
