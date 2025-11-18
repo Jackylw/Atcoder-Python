@@ -11,6 +11,7 @@ def solve1(A, x, y):
 
 def solve2(A, l, r):
     pass
+    
 
 
 for i in range(len(query)):
