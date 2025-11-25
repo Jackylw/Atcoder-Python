@@ -15,5 +15,29 @@ class Solution:
                 backtrack(first + 1)
                 # 撤销
                 nums[first], nums[i] = nums[i], nums[first]
+
         backtrack()
         return ans
+
+    def permute2(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        path = []  # 存放当前路径
+        used = [False] * len(nums)  # 标记数字是否使用
+
+        def backtrack(nums):
+            if len(path) == len(nums):
+                res.append(path[:])
+                return
+            for i in range(len(nums)):
+                # 跳过已经使用的数字
+                if used[i]:
+                    continue
+                used[i] = True
+                path.append(nums[i])
+                backtrack(nums)
+                # 回溯
+                path.pop()
+                used[i] = False
+
+        backtrack(nums)
+        return res
