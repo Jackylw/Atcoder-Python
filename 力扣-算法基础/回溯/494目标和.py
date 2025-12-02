@@ -29,6 +29,9 @@ class Solution:
         if total < target or (target + total) % 2:
             return 0
         subset_sum = (target + total) // 2
+        if subset_sum < 0:
+            return 0
+        # 01背包问题，选取一些数字，使其和为 subset_sum
         dp = [0] * (subset_sum + 1)
         dp[0] = 1
         for i in range(len(nums)):
@@ -37,4 +40,4 @@ class Solution:
         return dp[subset_sum]
 
 
-print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
+print(Solution().findTargetSumWays2([1, 1, 1, 1, 1], 3))
