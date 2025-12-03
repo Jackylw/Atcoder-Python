@@ -3,7 +3,7 @@ import collections
 
 
 class Solution:
-    # BFS_DFS
+    # BFS
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         curColor = image[sr][sc]
         if curColor == color:
