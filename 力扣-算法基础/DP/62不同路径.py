@@ -1,5 +1,7 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
+        # dp 含义：到达坐标 m，n 处的路径数
+        # 注意 起点在 1,1
         dp = [[0] * (n + 1) for _ in range(m + 1)]
         # dp[0][0] = 1
         # dp[0][1] = 1
